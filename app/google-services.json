@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570148494258",
+    "project_id": "datatemann",
+    "storage_bucket": "datatemann.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570148494258:android:67e98068e9dccd68a1e2ab",
+        "android_client_info": {
+          "package_name": "com.example.datatemann"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALS-7b77JHvA0kVNbecCBQ96qiFIqQZSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
