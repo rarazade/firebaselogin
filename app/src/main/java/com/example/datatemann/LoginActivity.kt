@@ -1,5 +1,4 @@
 package com.example.datatemann
-
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var auth: FirebaseAuth? = null
     private val RC_SIGN_IN = 1
-    private lateinit var binding : ActivityLoginBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +25,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
 
         if (auth!!.currentUser == null) {
+
         } else {
             intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
@@ -39,9 +39,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         if (requestCode == RC_SIGN_IN) {
             val response = IdpResponse.fromResultIntent(data)
 
-            if (requestCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK) {
                 val user = FirebaseAuth.getInstance().currentUser
-                Toast.makeText(this,"Login Berhasil", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Login Dibatalkan", Toast.LENGTH_SHORT).show()
             }
         }
     }
